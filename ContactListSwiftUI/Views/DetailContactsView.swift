@@ -20,14 +20,8 @@ struct DetailContactsView: View {
                     .frame(width: 150, height: 150, alignment: .center)
                 Spacer()
             }
-            HStack {
-                Image(systemName: "phone").foregroundColor(.blue)
-                Text(contact.phone)
-            }
-            HStack {
-                Image(systemName: "mail").foregroundColor(.blue)
-                Text(contact.email)
-            }
+            Label(contact.phone, systemImage: "phone")
+            Label(contact.email, systemImage: "mail")
         }
         .navigationTitle(contact.foulName)
         .frame(width: 440)
@@ -36,6 +30,6 @@ struct DetailContactsView: View {
 
 struct DetailContactsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailContactsView(contact: Person(name: "", surname: "", phone: "", email: ""))
+        DetailContactsView(contact: Person.getPersonList().first!)
     }
 }

@@ -15,14 +15,8 @@ struct NumbersView: View {
         NavigationView{
             List(contactList, id: \.self) { contact in
                 Section(header: Text("\(contact.foulName)")) {
-                    HStack {
-                        Image(systemName: "phone").foregroundColor(.blue)
-                        Text("\(contact.phone)")
-                    }
-                    HStack{
-                        Image(systemName: "mail").foregroundColor(.blue)
-                        Text("\(contact.email)")
-                    }
+                    Label(contact.phone, systemImage: "phone")
+                    Label(contact.email, systemImage: "mail")
                 }
             }
             .navigationTitle("Contact List")

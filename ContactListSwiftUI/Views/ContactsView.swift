@@ -17,8 +17,9 @@ struct ContactsView: View {
                 NavigationLink(destination: DetailContactsView(contact: contact)) {
                     Text(contact.foulName)
                 }
-            }.listStyle(.plain)
-                .navigationTitle("Contact List")
+            }
+            .listStyle(.plain)
+            .navigationTitle("Contact List")
         }
     }
 }
